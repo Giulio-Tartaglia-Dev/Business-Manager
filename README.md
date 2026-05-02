@@ -4,7 +4,7 @@ Un'interfaccia web moderna e reattiva progettata per la gestione contabile perso
 
 ## 🚀 Live Demo
 
-Visualizza il progetto dal vivo: [Business Manager Demo](https://giulio-tartaglia-dev.github.io/business-manager/Home/Home.html)
+Visualizza il progetto dal vivo: [Business Manager Demo](https://giulio-tartaglia-dev.github.io/Business-Manager/Home/Home.html)
 
 ## 🛠️ Caratteristiche Tecniche
 
