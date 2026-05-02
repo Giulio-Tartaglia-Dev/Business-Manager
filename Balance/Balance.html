@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="Balance.css">
+        <title>
+            Business Manager
+        </title>
+    </head>
+    <body>
+        <nav class="NavBar">
+            <div>
+                <a href="../Home/Home.html" span class="Home"><h1 class="NavText">Home</h1></a>
+                <a href="../Balance/Balance.html" span class="Balance"><h1 class="NavText">Balance</h1></a>
+                <a href="../Analytics/Analytics.html" span class="Analytics"><h1 class="NavText">Analytics</h1></a>
+                <a href="../Ai/Ai.html" span class="Ai"><h1 class="NavText">AI</h1></a>
+                <a href="#" class="Settings" id="OpenSettings"><h1 class="NavText">Settings</h1></a>
+            </div>
+        </nav>
+        <main class="BalancePage">
+            <section class="Title">
+                <h1> Balance </h1>
+            </section>
+            <button class="Btn-Add"> Aggiungi Transazione </button>
+            <div class="AreaMovimenti">
+                <h2>Movimenti</h2>
+                <div class="Filtro">
+                    <input type="text" id="FilterInput" placeholder="Cerca Descrizione o Data...">
+                </div>
+                <div id="ListaMovimenti">
+                </div>
+            </div>
+            <div id="Overlay" class="ModalOverlay">
+                <div class="ModalContent">
+                    <h2 class="MTitle"> Nuovo Movimento </h2>
+                    <div class="Form-Group">
+                        <label>Importo (€)</label>
+                        <input type="number" id="amount" placeholder="0.00" step="0.01">
+                    </div>
+                    <div class="Form-Group">
+                        <label>Tipo</label>
+                        <select id="type">
+                            <option value="Entrata">Entrata (+)</option>
+                            <option value="Uscita">Uscita (-)</option>
+                        </select>
+                    </div>
+                    <div class="Form-Group">
+                        <label>Pagamento</label>
+                        <select id="PayMethod">
+                            <option value="Contanti">Contanti</option>
+                            <option value="Carta">Carta</option>
+                            <option value="Banca">Banca</option>
+                        </select>
+                    </div>
+                    <div class="Form-Group">
+                        <label>Dettagli (opzionale)</label>
+                        <textarea id="details" placeholder="Esempio: Spesa Market..."></textarea>
+                    </div>
+                    <div class="Modal-Buttons">
+                        <button id="Close-Btn" class="Btn-Secondary">Annulla</button>
+                        <button id="Save-Btn" class="Btn-Primary">Salva</button>
+                    </div>
+                </div>
+            </div>
+            <div id="SettingsOverlay" class="ModalOverlay">
+                <div class="ModalContent">
+                    <h2 class="MTitle">Impostazioni</h2>
+                    <div class="Form-Group">
+                        <label>Valuta</label>
+                        <select id="Currency">
+                            <option value="€">Euro (€)</option>
+                            <option value="$">Dollaro ($)</option>
+                            <option value="£">Sterlina (£)</option>
+                        </select>
+                    </div>
+                    <div class="Form-Group">
+                         <label>Obiettivo Risparmio Totale: </label>
+                         <input type="number" id="GoalSavings" placeholder="Es: 5000">
+                    </div>
+                    <div class="Form-Group">
+                        <label>Limite Spesa Mensile</label>
+                        <input type="number" id="GoalSpending" placeholder="Es: 800">
+                    </div>
+                    <div style="margin-top: 20px; padding-top: 15px; border-top: 1pxsolid rgba(255,255,255,0.1);">
+                        <button id="Export-Btn" style="background: none; border: 1px solid #2ecc71; color: #2ecc71; width: 100%; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: bold;">
+                            ESPORTA DATI (CSV/EXCEL)
+                        </button>
+                    </div>
+                    <div style="margin-top: 20px; padding-top: 15px; border-top: 1pxsolid rgba(255,255,255,0.1);">
+                        <button id="ResetSystem-Btn" style="background: none; border: 1px solid #e74c3c; color: #e74c3c; width: 100%; padding: 10px; border-radius: 8px; cursor: pointer; font-size: 12px; font-weight: bold;">
+                            RIPRISTINA SISTEMA (ELIMINA TUTTO)
+                    </button> 
+                    </div>
+                    <div class="Modal-Buttons">
+                        <button id="Btn-Close" class="Btn-Secondary">Annulla</button>
+                        <button id="Btn-Salva" class="Btn-Primary">Salva</button>
+                    </div>  
+                </div>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js">
+        </script>
+        <script src="Balance.js">
+        </script>
+    </body>
+</html>
