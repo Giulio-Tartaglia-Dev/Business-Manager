@@ -1,1 +1,59 @@
-Business Manager — Financial DashboardGestione contabile intelligente con analisi predittiva e privacy-first.Il progetto Business Manager nasce dall'esigenza di fornire una piattaforma di monitoraggio finanziario che unisca un design d'avanguardia a una gestione dati sicura e locale. L'applicazione trasforma il modo in cui monitori le tue finanze: non è solo un registro di entrate e uscite, ma una dashboard decisionale che analizza i tuoi progressi verso obiettivi di risparmio e limiti di spesa in tempo reale.  L'interfaccia, caratterizzata da un'estetica Dark Mode con effetti di Glassmorphism, garantisce un'esperienza utente fluida e professionale, minimizzando le distrazioni e massimizzando la chiarezza dei dati esposti.  🔗 Live DemoPuoi testare l'applicazione completa direttamente dal tuo browser al seguente link:CLICCA QUI PER LA DEMO🛠 Stack TecnologicoIl progetto è stato sviluppato seguendo la filosofia "Vanilla & Performance", evitando framework pesanti per garantire tempi di caricamento istantanei e massima compatibilità.Frontend Core: HTML5 semantico e CSS3 avanzato (utilizzo di Custom Properties, Flexbox e CSS Grid)[cite: 1, 2, 4, 5, 7, 8].Logica Applicativa: JavaScript ES6+ per la gestione dello stato e delle interazioni DOM[cite: 3, 6, 9].Data Visualization: Chart.js, utilizzato per generare grafici a torta, a barre e lineari che rendono immediata la comprensione del flusso di cassa.  Data Exporting: SheetJS (XLSX), integrato per permettere l'esportazione dei movimenti in file Excel professionali direttamente dal browser[cite: 3, 6, 9].Data Storage: Implementazione di Web Storage API (localStorage), garantendo la persistenza dei dati senza la necessità di un database remoto, assicurando che le informazioni restino sul dispositivo dell'utente[cite: 3, 6].⚙️ Funzionamento Tecnico e LogicaIl software opera come una Single Page Application (SPA) distribuita su più moduli, coordinata da un sistema di navigazione a scomparsa che ottimizza lo spazio di lavoro[cite: 1, 2, 4, 5, 7, 8].1. Motore di Calcolo e StatoIl sistema calcola dinamicamente il saldo totale eseguendo il reduce() dell'array dei movimenti salvato localmente, distinguendo tra il tipo Entrata (incremento) e Uscita (decremento)[cite: 3, 6, 9]. La dashboard principale si aggiorna automaticamente mostrando gli ultimi tre movimenti per una consultazione rapida[cite: 3].2. Gestione Transazioni e FiltriNella sezione Balance, è possibile inserire nuove transazioni tramite una finestra modale[cite: 5, 6]. Ogni movimento viene registrato con un timestamp univoco e può essere rimosso con animazioni fluide di uscita (slideIn e transform), che aggiornano istantaneamente la memoria locale[cite: 4, 6]. Un sistema di filtraggio avanzato permette di cercare movimenti specifici per descrizione o data tramite input dinamico[cite: 5, 6].3. Business Intelligence e AnalyticsLa logica di analisi confronta i dati inseriti con i parametri definiti nel pannello Settings (Valuta, Limite Spesa, Obiettivo Risparmio)[cite: 2, 5, 8, 9]. Il software segnala visivamente il superamento del budget impostato, cambiando il colore dei grafici da blu a rosso nel grafico a barre del budget mensile[cite: 9].4. Esportazione e ResetL'integrazione con la libreria XLSX mappa l'oggetto JSON dei movimenti in un foglio di calcolo formattato, permettendo il download immediato di un report contabile annuale[cite: 3, 6, 9]. È inoltre presente una funzione di System Reset che esegue il localStorage.clear() per ripristinare l'applicazione allo stato iniziale
+.
+├── Home/
+│   ├── Home.html        # Landing page con overview saldo e movimenti[cite: 2]
+│   ├── Home.css         # Stili globali e keyframes animazioni[cite: 1]
+│   └── Home.js          # Logica di calcolo totale e gestione impostazioni[cite: 3]
+├── Balance/
+│   ├── Balance.html     # Gestione transazioni e registro contabile[cite: 5]
+│   ├── Balance.css      # Layout specifico per liste e modali[cite: 4]
+│   └── Balance.js       # Motore di inserimento, filtro ed eliminazione dati[cite: 6]
+├── Analytics/
+│   ├── Analytics.html   # Dashboard visuale con report grafici[cite: 8]
+│   ├── Analytics.css    # Stili per container grafici e card[cite: 7]
+│   └── Analytics.js     # Integrazione Chart.js e analisi budget[cite: 9]
+├── Ai/
+│   ├── Ai.html          # Interfaccia assistente virtuale[cite: 10]
+│   └── Ai.css           # Styling per chat container e messaggi[cite: 10]
+└── Icons/               # Asset grafici e icone di sistemaCertamente, ecco la descrizione del tuo progetto ottimizzata esattamente secondo lo stile, la lunghezza e la struttura delle immagini che hai inviato.
+
+---
+
+# 💻 Business Manager - Financial Dashboard UI
+
+Un'interfaccia web moderna e reattiva progettata per la gestione contabile personale e aziendale. Il progetto si focalizza sulla trasparenza dei flussi di cassa attraverso un'esperienza utente pulita, professionale e focalizzata sui dati[cite: 1, 2].
+
+## 🚀 Live Demo
+
+Visualizza il progetto dal vivo: [Business Manager Demo](https://tuo-username.github.io/business-manager/Home/Home.html)
+
+## 🛠️ Caratteristiche Tecniche
+
+*   **Architettura Modulare:** Il codice è organizzato in directory separate (`Home`, `Balance`, `Analytics`, `Ai`) per massimizzare la manutenibilità e la scalabilità del software[cite: 2, 5, 8].
+*   **Modern UI/UX:** Utilizzo di CSS avanzato con effetti di trasparenza (`backdrop-filter`), gradienti radiali e animazioni sulle interazioni (`hover effects`) per garantire un'esperienza immersiva[cite: 1, 4, 7, 10].
+*   **Navigazione Dinamica:** Implementazione di una barra di navigazione laterale "sticky" con icone personalizzate e sistema di gestione stato per il monitoraggio in tempo reale del saldo[cite: 1, 2, 3].
+
+## 🧰 Stack Tecnologico
+
+*   **Frontend:** HTML5, CSS3 (Custom Properties & Flexbox), JavaScript ES6+[cite: 1, 3, 4, 6].
+*   **Design:** Montserrat Typography, Glassmorphism UI, Chart.js per la visualizzazione dati[cite: 1, 8, 9].
+*   **Struttura:** Organizzazione multi-cartella per separazione degli asset (Icons, CSS specifici, script di logica)[cite: 2, 5, 8].
+
+## 📂 Struttura del Progetto
+```text
+.
+├── Home/
+│   ├── Home.html        # Landing page con overview saldo e movimenti[cite: 2]
+│   ├── Home.css         # Stili globali e keyframes animazioni[cite: 1]
+│   └── Home.js          # Logica di calcolo totale e gestione impostazioni[cite: 3]
+├── Balance/
+│   ├── Balance.html     # Gestione transazioni e registro contabile[cite: 5]
+│   ├── Balance.css      # Layout specifico per liste e modali[cite: 4]
+│   └── Balance.js       # Motore di inserimento, filtro ed eliminazione dati[cite: 6]
+├── Analytics/
+│   ├── Analytics.html   # Dashboard visuale con report grafici[cite: 8]
+│   ├── Analytics.css    # Stili per container grafici e card[cite: 7]
+│   └── Analytics.js     # Integrazione Chart.js e analisi budget[cite: 9]
+├── Ai/
+│   ├── Ai.html          # Interfaccia assistente virtuale[cite: 10]
+│   └── Ai.css           # Styling per chat container e messaggi[cite: 10]
+└── Icons/               # Asset grafici e icone di sistema[cite: 1, 4, 7]
